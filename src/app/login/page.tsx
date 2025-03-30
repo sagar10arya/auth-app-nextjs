@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-export default function SignupPage() {
+export default function LoginPage() {
   const [user, setUser] = React.useState({
     email: "",
     password: "",
@@ -23,7 +23,7 @@ export default function SignupPage() {
       toast.success("Login Success!")
       router.push("/profile");
     } catch (error: any) {
-      console.log("Signup Failed: ", error.message);
+      console.log("Login Failed: ", error.message);
       toast.error(error.message);
     } finally {
       setLoading(false);
@@ -74,8 +74,8 @@ export default function SignupPage() {
       />
 
       <button
-        className="p-2 mt-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
         onClick={onLogin}
+        className="p-2 mt-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
       >
         Login
       </button>
